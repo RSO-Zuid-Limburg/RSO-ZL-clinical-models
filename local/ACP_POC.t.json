@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "2.0.0",
+      "sem_ver" : "2.0.1",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "3931b9775a4801f487ccd297e1a176ff",
+      "MD5-CAM-1.0.1" : "d32e6dbda30ff8d2558aaad8dce8f974",
       "PARENT:MD5-CAM-1.0.1" : "005501C1FA493A4838F5F1121F2870EC"
     },
     "details" : {
@@ -1202,6 +1202,13 @@
             "text" : "(Synthesized)",
             "code" : "ac0.5",
             "description" : ""
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000",
+            "text" : "Advance intervention decisions",
+            "description" : "Anticipatory decisions about the overall intent of care and possible interventions (including treatments, activities, and diagnostic or therapeutic procedures), asserted by a clinician.",
+            "comment" : "We  chose to put CPR information from the zib in the \"per intervention\" element instead of the \"CPR\" element."
           }
         },
         "nb" : {
