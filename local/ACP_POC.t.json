@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "4.0.0",
+      "sem_ver" : "5.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "759c9f70b41ad8a6b3ecc89830a6d71e",
+      "MD5-CAM-1.0.1" : "88f060b8a153b02da490658f7bc6321b",
       "PARENT:MD5-CAM-1.0.1" : "005501C1FA493A4838F5F1121F2870EC"
     },
     "details" : {
@@ -509,43 +509,43 @@
                       "selectedTerminologies" : [ "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1" ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "NR",
                         "value" : "Niet reanimeren verklaring"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "VOL",
                         "value" : "Volmacht"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "VERB",
                         "value" : "Behandelverbod"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "VERBVL",
                         "value" : "Behandelverbod met aanvulling Voltooid Leven"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "MON",
                         "value" : "Mondelinge afspraak"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "EU",
                         "value" : "Euthanasieverzoek"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "EUD",
                         "value" : "Euthanasieverzoek met aanvulling Dementie"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "LW",
                         "value" : "Levenswensverklaring"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.2.4.3.11.60.40.4.14.1",
+                        "code" : "DO",
                         "value" : "Verklaring donorschap"
                       }, {
                         "terminologyId" : "OID: 2.16.840.1.113883.2.4.3.11.60.40.2.7.15.1",
-                        "code" : "2.16.840.1.113883.5.1008",
+                        "code" : "OTH",
                         "value" : "Anders"
                       } ]
                     } ]
@@ -1162,32 +1162,14 @@
               "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0047.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_DATE_TIME",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0048.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_DATE_TIME",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
