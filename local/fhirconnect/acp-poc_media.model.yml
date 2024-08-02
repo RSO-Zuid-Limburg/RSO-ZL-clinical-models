@@ -1,6 +1,8 @@
 format: "0.2.0"
 version: "0.2.0"
 
+# No fhirConfig, because this model has no direct Resource equivalent in FHIR. It can only be used in openEHR Archetype slots or as FHIR Resource attribute.
+
 openEhrConfig:
   archetype: "openEHR-EHR-CLUSTER.media_file.v1"
 
@@ -10,3 +12,9 @@ mappings:
       fhir: "$fhirRoot"
       openehr: "$openEhrArchetype.content"
       type: "MEDIA" # a new type had to be introduced, not yet in the official fhir connect spec
+    followedBy:
+      mappings:
+        - with:
+            fhir: "title"
+            openehr: "$openEhrArchetype.advance_care_directive.media_file.content_name"
+            type: "TEXT"

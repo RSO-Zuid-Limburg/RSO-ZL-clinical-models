@@ -49,9 +49,3 @@ mappings:
       openehr: "$openEhrArchetype.advance_care_directive.media_file.content"
       type: "NONE"
     slotArchetype: "openEHR-EHR-CLUSTER.media_file.v1"
-
-  - name: "media name"
-    with:
-      fhir: "$fhirResource.source.as(Attachment).title"
-      openehr: "$openEhrArchetype.advance_care_directive.media_file.content_name"
-      type: "TEXT"
