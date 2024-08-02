@@ -1,0 +1,12 @@
+format: "0.2.0"
+version: "0.2.0"
+
+openEhrConfig:
+  archetype: "openEHR-EHR-CLUSTER.media_file.v1"
+
+mappings:
+  - name: "media"
+    with:
+      fhir: "$fhirRoot"
+      openehr: "$openEhrArchetype.content"
+      type: "MEDIA" # a new type had to be introduced, not yet in the official fhir connect spec
