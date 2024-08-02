@@ -14,11 +14,6 @@ openEhrConfig:
   archetype: "openEHR-EHR-EVALUATION.advance_care_directive.v2"
 
 mappings:
-  - name: "patient"
-    with:
-      fhir: "$fhirResource.subject.reference"
-      openehr: "$openEhrContext.$ehr"
-
 
   - name: "type of directive"
     with:

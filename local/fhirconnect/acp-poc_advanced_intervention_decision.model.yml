@@ -14,11 +14,6 @@ openEhrConfig:
   archetype: "openEHR-EHR-EVALUATION.advance_intervention_decisions.v1"
 
 mappings:
-  - name: "patient"
-    with:
-      fhir: "$fhirResource.subject.reference"
-      openehr: "$openEhrContext.$ehr"
-
 
   - name: "treatment"
     with:
