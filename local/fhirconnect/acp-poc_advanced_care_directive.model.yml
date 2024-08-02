@@ -29,7 +29,7 @@ mappings:
       targetRoot: "$fhirResource.category.coding"
       targetAttribute: "system"
       operator: "one of"
-      criteria: "[$snomed.urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1]"
+      criteria: "[urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1]"
 
   - name: "status"
     with:
