@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3b3b561619a85b34ae3636efed9011f0">
+		["MD5-CAM-1.0.1"] = <"16fedd4f6a58ecb3f998906bd96a2fb3">
 		["build_uid"] = <"88f82616-926a-374f-bb04-e5460a6fa293">
 	>
 
@@ -33,29 +33,6 @@ definition
 			ELEMENT[at0014] occurrences matches {0..1} matches {    -- Reason for discussion
 				value matches {
 					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Rediscussion wanted
-				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0007,    -- Yes
-							at0008]    -- No
-						}
-					}
-				}
-			}
-			ELEMENT[at0010] occurrences matches {0..1} matches {    -- Deadline next discussion
-				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0011,    -- < 1 month
-							at0012,    -- < 3 month
-							at0013]    -- Undefined
-						}
-					}
 				}
 			}
 		}
@@ -68,34 +45,6 @@ ontology
 				["at0000"] = <
 					text = <"VitalyMDT">
 					description = <"VitalyMDT">
-				>
-				["at0006"] = <
-					text = <"Rediscussion wanted">
-					description = <"">
-				>
-				["at0007"] = <
-					text = <"Yes">
-					description = <"">
-				>
-				["at0008"] = <
-					text = <"No">
-					description = <"">
-				>
-				["at0010"] = <
-					text = <"Deadline next discussion">
-					description = <"">
-				>
-				["at0011"] = <
-					text = <"< 1 month">
-					description = <"">
-				>
-				["at0012"] = <
-					text = <"< 3 month">
-					description = <"">
-				>
-				["at0013"] = <
-					text = <"Undefined">
-					description = <"">
 				>
 				["at0014"] = <
 					text = <"Reason for discussion">
