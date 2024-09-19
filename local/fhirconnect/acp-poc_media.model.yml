@@ -11,10 +11,11 @@ mappings:
     with:
       fhir: "$fhirRoot"
       openehr: "$openEhrArchetype.content"
-      type: "MEDIA" # a new type had to be introduced, not yet in the official fhir connect spec
+      type: "MEDIA"
     followedBy:
       mappings:
-        - with:
+        - name: "media title"
+          with:
             fhir: "title"
             openehr: "$openEhrArchetype.advance_care_directive.media_file.content_name"
             type: "TEXT"
