@@ -1,58 +1,57 @@
-
-
-format: "0.0.2"
-version: "0.2.0"
-
-fhirConfig:
-  resource: "QuestionnaireResponse"
-  multiple: false
-
-openEhrConfig:
-  archetype: "openEHR-EHR-EVALUATION.clinical_synopsis.v1" # doesn't really matter which one it is, as this is a context mapper
+grammar: FHIRConnect/v0.0.1
+type: model
+metadata:
+  name: "OBSERVATION.karnofsky_performance_status_scale.v1"
+  version: 0.0.1a
+spec:
+  system: FHIR
+  version: R4
+  openEhrConfig:
+    archetype: "openEHR-EHR-OBSERVATION.karnofsky_performance_status_scale.v1" # doesn't matter which is referenced here because this is a context field
+  fhirConfig:
+    structureDefinition: http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
+    multiple: false
 
 mappings:
   - name: "signatories"
     with:
-      fhir: "$fhirResource.item.answer"
-      openehr: "$openEhrArchetype.context._participation[n]"
+      fhir: "$resource.item.answer"
+      openehr: "$composition.context._participation[n]"
       type: "NONE"
-    condition:
-      targetRoot: "$fhirResource.item"
+    fhirCondition:
+      targetRoot: "$resource.item"
       targetAttribute: "linkId"
       operator: "one of"
-      criteria: "[signatories]"
+      criteria: "signatories"
     followedBy:
       mappings:
         - name: "name"
           with:
             fhir: "value"
             openehr: "|name"
-            type: "STRING"
         - name: "function"
           with:
             fhir: "value"
             openehr: "|function"
-            type: "STRING"
 
   - name: "groupSummary"
     with:
-      fhir: "$fhirResource.item"
-      openehr: "$openEhrArchetype.context"
+      fhir: "$resource.item"
+      openehr: "$composition.context"
       type: "NONE"
     condition:
-      targetRoot: "$fhirResource.item"
+      targetRoot: "$resource.item"
       targetAttribute: "linkId"
       operator: "one of"
-      criteria: "[groupSummary]"
+      criteria: "groupSummary"
     followedBy:
       mappings:
         - name: "reasonForDiscussion"
           with:
             fhir: "item.answer.value"
             openehr: "vitalymdt.reason_for_discussion"
-            type: "STRING"
           condition:
             targetRoot: "item"
             targetAttribute: "linkId"
             operator: "one of"
-            criteria: "[reasonForDiscussion]"
+            criteria: "reasonForDiscussion"

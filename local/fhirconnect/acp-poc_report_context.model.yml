@@ -1,18 +1,19 @@
-
-
-format: "0.0.2"
-version: "0.2.0"
-
-fhirConfig:
-  resource: "Task"
-  multiple: false
-
-openEhrConfig:
-  archetype: "openEHR-EHR-EVALUATION.clinical_synopsis.v1" # doesn't really matter which one it is, as this is a context mapper
+grammar: FHIRConnect/v0.0.1
+type: model
+metadata:
+  name: "OBSERVATION.karnofsky_performance_status_scale.v1"
+  version: 0.0.1a
+spec:
+  system: FHIR
+  version: R4
+  openEhrConfig:
+    archetype: "openEHR-EHR-OBSERVATION.karnofsky_performance_status_scale.v1" # doesn't matter which is referenced here because this is a context field
+  fhirConfig:
+    structureDefinition: http://hl7.org/fhir/StructureDefinition/Task
+    multiple: false
 
 mappings:
-  - name: "report id"
+  - name: "reportId"
     with:
-      fhir: "$fhirResource.id"
-      openehr: "$openEhrArchetype.context.report_id"
-      type: "STRING"
+      fhir: "$resource.id"
+      openehr: "$composition.context.report_id"

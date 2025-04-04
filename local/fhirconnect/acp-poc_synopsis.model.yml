@@ -1,35 +1,59 @@
+grammar: FHIRConnect/v0.0.1
+type: model
+metadata:
+  name: "EVALUATION.clinical_synopsis.v1"
+  version: 0.0.1a
+spec:
+  system: FHIR
+  version: R4
+  openEhrConfig:
+    archetype: "openEHR-EHR-EVALUATION.clinical_synopsis.v1"
+  fhirConfig:
+    structureDefinition: http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
 
-
-format: "0.0.2"
-version: "0.2.0"
-
-fhirConfig:
-  resource: "QuestionnaireResponse"
-  multiple: false
-
-openEhrConfig:
-  archetype: "openEHR-EHR-EVALUATION.clinical_synopsis.v1"
 
 mappings:
   - name: "groupMdtConclusion"
     with:
-      fhir: "$fhirResource.item"
-      openehr: "$openEhrArchetype"
+      fhir: "$resource.item"
+      openehr: "$archetype"
       type: "NONE"
-    condition:
-      targetRoot: "$fhirResource.item"
+    fhirCondition:
+      targetRoot: "$resource.item"
       targetAttribute: "linkId"
       operator: "one of"
-      criteria: "[groupMdtConclusion]"
+      criteria: "groupMdtConclusion"
     followedBy:
       mappings:
         - name: "synopsis"
           with:
             fhir: "item.answer.value"
-            openehr: "$openEhrArchetype.clinical_synopsis.synopsis"
-            type: "STRING"
-          condition:
+            openehr: "$archetype/data[at0001]/items[at0002]"
+          fhirCondition:
             targetRoot: "item"
             targetAttribute: "linkId"
             operator: "one of"
-            criteria: "[conclusion]"
+            criteria: "conclusion"
+
+  - name: "signatories"
+    with:
+      fhir: "$resource.item.answer"
+      openehr: "$composition/context/_participation[n]"
+      type: "NONE"
+    fhirCondition:
+      targetRoot: "$resource.item"
+      targetAttribute: "linkId"
+      operator: "one of"
+      criteria: "signatories"
+    followedBy:
+      mappings:
+        - name: "name"
+          with:
+            fhir: "value"
+            openehr: "|name"
+
+        - name: "function"
+          with:
+            fhir: "value"
+            openehr: "|function"
+            
