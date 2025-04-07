@@ -1,21 +1,24 @@
-format: "0.2.0"
-version: "0.2.0"
-
-# No fhirConfig, because this model has no direct Resource equivalent in FHIR. It can only be used in openEHR Archetype slots or as FHIR Resource attribute.
-
-openEhrConfig:
-  archetype: "openEHR-EHR-CLUSTER.media_file.v1"
+grammar: FHIRConnect/v0.0.1
+type: model
+metadata:
+  name: "CLUSTER.media_file.v1"
+  version: 0.0.1a # version of this particular mapping
+spec: # schema specific to the FHIRConnect v0.0.1 engine
+  system: FHIR
+  version: R4
+  openEhrConfig:
+    archetype: "openEHR-EHR-CLUSTER.media_file.v1"
+  fhirConfig:
+    structureDefinition: http://hl7.org/fhir/StructureDefinition/Attachment
 
 mappings:
   - name: "media"
     with:
       fhir: "$fhirRoot"
-      openehr: "$openEhrArchetype.content"
-      type: "MEDIA"
+      openehr: "$archetype/items[at0001]"
     followedBy:
       mappings:
-        - name: "media title"
+        - name: "title"
           with:
             fhir: "title"
-            openehr: "$openEhrArchetype.advance_care_directive.media_file.content_name"
-            type: "TEXT"
+            openehr: "$archetype/items[at0002]"
